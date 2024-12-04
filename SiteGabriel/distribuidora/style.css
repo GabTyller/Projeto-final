@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    background-image: url('sua-imagem-de-fundo.jpg'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-size: 12px; /* Diminuir o tamanho da fonte */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    padding: 10px 15px; /* Reduzir o padding */
+}
+
+header img {
+    height: 40px; /* Diminuir o tamanho da logo */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-bar input {
+    padding: 6px;
+    border-radius: 20px;
+    border: none;
+    width: 150px; /* Diminuir a largura da caixa de pesquisa */
+}
+
+.search-bar button {
+    background: #d4af37;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.icons-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu principal */
+nav {
+    background-color: #000;
+    padding: 8px 0; /* Reduzir o padding */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Reduzir o espaçamento */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; /* Reduzir o tamanho da fonte */
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+/* Aviso sobre frete */
+.title-bar {
+    background-color: #d4af37;
+    color: black;
+    text-align: center;
+    padding: 8px 0; /* Reduzir o padding */
+    font-weight: bold;
+}
+
+/* Produtos */
+.bebidas {
+    padding: 15px;
+}
+
+.bebidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Diminuir largura dos itens */
+    gap: 15px; /* Reduzir o espaço entre os itens */
+}
+
+.bebida-item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Diminuir o arredondamento das bordas */
+    padding: 12px; /* Reduzir o padding */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.bebida-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bebida-item img {
+    width: 100px; /* Diminuir o tamanho da imagem */
+    height: 120px; /* Diminuir a altura da imagem */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.bebida-item button {
+    background-color: #d4af37;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px; /* Reduzir o tamanho da fonte no botão */
+}
+
+.bebida-item button:hover {
+    background-color: #c19330;
+}
+
+/* Carrinho */
+.carrinho {
+    padding: 15px; /* Reduzir o padding no carrinho */
+    background-color: white;
+    border-radius: 8px; /* Diminuir o arredondamento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 700px; /* Diminuir a largura máxima */
+}
+
+.carrinho table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrinho th, .carrinho td {
+    text-align: left;
+    padding: 8px; /* Diminuir o padding */
+    border-bottom: 1px solid #ccc;
+}
+
+.carrinho th {
+    background-color: #d4af37;
+    color: black;
+}
+
+.carrinho td:last-child {
+    text-align: right;
+}
+
+/* Estilo para o footer */
+footer {
+    background-color: #000; /* Fundo preto */
+    color: #fff;            /* Texto branco */
+    text-align: center;     /* Alinhamento centralizado */
+    padding: 15px 0;        /* Diminuir o padding */
+    width: 100%;            /* Ocupa toda a largura */
+    font-size: 12px;        /* Tamanho do texto menor */
+    margin-top: 20px;       /* Espaço extra acima do rodapé */
+}
+
+.bebidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Configura o número de colunas */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 20px; /* Espaçamento interno para a seção */
+}
+
+.bebida-item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bebida-item:hover {
+    transform: scale(1.05); /* Pequeno efeito de zoom */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao passar o mouse */
+}
+
+.bebida-item img {
+    width: 100%; /* Adapta a imagem à largura do contêiner */
+    max-width: 120px; /* Define uma largura máxima */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+.bebida-item h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.bebida-item p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555; /* Cor secundária para descrições */
+}
+
+.bebida-item button {
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.bebida-item button:hover {
+    background-color: #c19330;
+}

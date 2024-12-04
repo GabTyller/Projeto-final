@@ -1,0 +1,535 @@
+/* Configura o layout da página para ocupar a tela inteira */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Estilo do header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+header .image img {
+    height: 60px;
+}
+
+#search-bar {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    width: 200px;
+}
+
+.search-icon {
+    height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.icons-menu img {
+    height: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.icons-menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Menu principal */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    padding-bottom: 20px;
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.menu ul li a:hover {
+    color: #d4af37;
+}
+
+/* Barra de título */
+.titulo {
+    background-color: #d4a43f; /* Cor dourada */
+    height: 40px; /* Altura ajustada para ficar mais próxima da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.titulo h2 {
+    margin: 0;
+    color: #000;
+}
+
+/* Estilos para a barra de pesquisa */
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+}
+
+.searchTerm::placeholder {
+    color: #000;
+    font-size: 16px;
+}
+
+.searchButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+.searchButton img {
+    width: 20px;
+}
+.wrap {
+    max-width: 300px;
+    width: 100%;
+  }
+
+
+/* Grid para os cards de bebidas */
+.bebidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.bebida-item {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    display: flex;               /* Define como flexbox */
+    flex-direction: column;       /* Itens em coluna */
+    justify-content: space-between; /* Distribui o conteúdo de forma que o botão fique no final */
+    height: 90%;                 /* Garante que todos os itens tenham altura igual */
+}
+
+.bebida-item img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    display: block;       /* Garante que a imagem seja tratada como um bloco */
+    margin: 0 auto; 
+}
+
+.bebida-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    min-height: 50px;
+}
+
+.bebida-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.bebida-item button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #d4a43f;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+/* Alinhar os preços corretamente */
+.price-container {
+    display: flex;
+    flex-direction: column;  /* Faz o preço antigo ficar em cima e o novo embaixo */
+    align-items: center;     /* Centraliza os preços */
+    justify-content: center;
+}
+
+
+
+/* Ajustes responsivos */
+@media (max-width: 850px) {
+    .icons-menu {
+        display: none;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .icons-menu {
+        margin-top: 10px;
+    }
+}
+
+/* Estilos para a paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.page-button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #d4a43f;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.page-button:hover {
+    background-color: #c38e37;
+}
+
+.page-button.active {
+    background-color: #b77d30;
+    font-weight: bold;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .popup-content h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .popup-button {
+    background-color: #b77d30;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup-button:hover {
+    background-color: #b77d30;
+  }
+
+/* Carrossel de imagens */
+.carrossel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carrossel-imagens {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%;
+}
+
+.carrossel-imagens img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+
+
+
+/* Contêiner do login/cadastro */
+/* Estilo do formulário de cadastro */
+.form-cadastro {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-cadastro {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-cadastro:focus {
+    border-color: #d4a43f;
+}
+
+.btn-cadastro {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #d4a43f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cadastro:hover {
+    background-color: #c38e37;
+}
+
+/* Estilos adicionais */
+/* Estilo do formulário de cadastro */
+.form-cadastro {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-cadastro {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-cadastro:focus {
+    border-color: #d4a43f;
+}
+
+.btn-cadastro {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #d4a43f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cadastro:hover {
+    background-color: #c38e37;
+}
+
+
+
+/* Conteúdo principal */
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.conteudo .chart {
+    width: 550px;
+    margin-right: 50px;
+}
+
+.conteudo .textinho {
+    background-color: #d4a43f;
+    padding: 36px;
+    border-radius: 40px;
+    text-align: left;
+    width: 950px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    font-size: 17px;
+}
+
+
+footer {
+    background-color: #333; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    text-align: center; /* Centralizar texto */
+    padding: 10px 0; /* Espaçamento interno */
+    font-size: 14px; /* Tamanho da fonte */
+    border-top: 2px solid #555; /* Linha superior */
+}
+
+footer p {
+    margin: 0; /* Remove margem */
+}
+/* Seção de contato */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-header h2 {
+    font-size: 48px;
+    color: #c49c3d;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+.contact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background-color: #c49c3d;
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.contact-card p {
+    margin: 15px 0;
+}
+
+.contact-card strong {
+    font-size: 20px;
+}
+
+
+
+/* Carrinho */
+.carrinho {
+    padding: 15px; /* Reduzir o padding no carrinho */
+    background-color: white;
+    border-radius: 8px; /* Diminuir o arredondamento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 700px; /* Diminuir a largura máxima */
+}
+
+.carrinho table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrinho th, .carrinho td {
+    text-align: left;
+    padding: 8px; /* Diminuir o padding */
+    border-bottom: 1px solid #ccc;
+}
+
+.carrinho th {
+    background-color: #d4af37;
+    color: black;
+}
+
+.carrinho td:last-child {
+    text-align: right;
+}
+
+
+
+
+
+
+
